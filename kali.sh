@@ -58,7 +58,7 @@ burpFree=false              # Disable configuring Burp Proxy Free (for Burp Pro 
 openVAS=false               # Install & configure OpenVAS (not everyone wants it...)                              [ --openvas ]
 
 ##### (Optional) Enable debug mode?
-set -x
+#set -x
 
 ##### (Cosmetic) Colour output
 RED="\033[01;31m"      # Issues/Errors
