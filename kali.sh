@@ -132,7 +132,7 @@ if [[ ${EUID} -ne 0 ]]; then
   exit 1
 else
   echo -e " ${BLUE}[*]${RESET} ${BOLD}Kali Linux 2.x post-install script${RESET}"
-fi
+fiu
 
 
 ##### Fix display output for GUI programs when connecting via SSH
@@ -144,15 +144,15 @@ export TERM=xterm
 (dmidecode | grep -iq virtual) && echo -e " ${YELLOW}[i]${RESET} VM Detected. Please be sure to have the ${YELLOW}correct tools ISO mounted${RESET}." && sleep 5s
 
 
-if [[ $(which gnome-shell) ]]; then
+#if [[ $(which gnome-shell) ]]; then
 ##### Disable notification package updater
-echo -e "\n ${GREEN}[+]${RESET} Disabling notification ${GREEN}package updater${RESET} service ~ in case it runs during this script"
-export DISPLAY=:0.0   #[[ -z $SSH_CONNECTION ]] || export DISPLAY=:0.0
-  dconf write /org/gnome/settings-daemon/plugins/updates/active false
-  dconf write /org/gnome/desktop/notifications/application/gpk-update-viewer/active false
-  timeout 5 killall -w /usr/lib/apt/methods/http >/dev/null 2>&1 || echo -e ' '${RED}'[!]'${RESET}" Failed to kill ${RED}/usr/lib/apt/methods/http${RESET}"
-  [[ -e /var/lib/dpkg/lock || -e /var/lib/apt/lists/lock ]] && echo -e ' '${RED}'[!]'${RESET}" There ${RED}another service${RESET} (other than this script) using ${BOLD}Advanced Packaging Tool${RESET} currently" && exit 1
-fi
+#echo -e "\n ${GREEN}[+]${RESET} Disabling notification ${GREEN}package updater${RESET} service ~ in case it runs during this script"
+#export DISPLAY=:0.0   #[[ -z $SSH_CONNECTION ]] || export DISPLAY=:0.0
+#  dconf write /org/gnome/settings-daemon/plugins/updates/active false
+#  dconf write /org/gnome/desktop/notifications/application/gpk-update-viewer/active false
+#  timeout 5 killall -w /usr/lib/apt/methods/http >/dev/null 2>&1 || echo -e ' '${RED}'[!]'${RESET}" Failed to kill ${RED}/usr/lib/apt/methods/http${RESET}"
+#  [[ -e /var/lib/dpkg/lock || -e /var/lib/apt/lists/lock ]] && echo -e ' '${RED}'[!]'${RESET}" There ${RED}another service${RESET} (other than this script) using ${BOLD}Advanced Packaging Tool${RESET} currently" && exit 1
+#fi
 
 
 ##### Check Internet access
