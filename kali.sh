@@ -3656,5 +3656,5 @@ echo -e " ${YELLOW}[i]${RESET}   + ${YELLOW}Reboot${RESET}"
 (dmidecode | grep -iq virtual) && echo -e " ${YELLOW}[i]${RESET}   + Take a snapshot   (Virtual machine detected!)"
 
 echo -e '\n'${BLUE}'[*]'${RESET}' '${BOLD}'Done!'${RESET}'\n\a'
-exit 0
 #####
+exit 0
