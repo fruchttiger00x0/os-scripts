@@ -141,7 +141,7 @@ export TERM=xterm
 
 
 #####  Give VM users a little heads up to get ready
-(dmidecode | grep -iq virtual) && echo -e " ${YELLOW}[i]${RESET} VM Detected. Please be sure to have the ${YELLOW}correct tools ISO mounted${RESET}." && sleep 5s
+#####(dmidecode | grep -iq virtual) && echo -e " ${YELLOW}[i]${RESET} VM Detected. Please be sure to have the ${YELLOW}correct tools ISO mounted${RESET}." && sleep 5s
 
 
 #####if [[ $(which gnome-shell) ]]; then
@@ -152,7 +152,7 @@ export TERM=xterm
 #####  dconf write /org/gnome/desktop/notifications/application/gpk-update-viewer/active false
 #####  timeout 5 killall -w /usr/lib/apt/methods/http >/dev/null 2>&1 || echo -e ' '${RED}'[!]'${RESET}" Failed to kill ${RED}/usr/lib/apt/methods/http${RESET}"
 #####  [[ -e /var/lib/dpkg/lock || -e /var/lib/apt/lists/lock ]] && echo -e ' '${RED}'[!]'${RESET}" There ${RED}another service${RESET} (other than this script) using ${BOLD}Advanced Packaging Tool${RESET} currently" && exit 1
-fi
+#####fi
 
 
 ##### Check Internet access
