@@ -168,7 +168,6 @@ if [[ "$?" -ne 0 ]]; then
     echo -e ' '${RED}'[!]'${RESET}" Quitting..." 1>&2
     exit 1
   fi
-fi
 #--- GitHub under DDoS?
 timeout 300 curl --progress -k -L -f "https://status.github.com/api/status.json" | grep -q "good" || (echo -e ' '${RED}'[!]'${RESET}" ${RED}GitHub is currently having issues${RESET}. ${BOLD}Lots may fail${RESET}. See: https://status.github.com/" 1>&2 && sleep 10s)
 
