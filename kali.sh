@@ -141,7 +141,7 @@ export TERM=xterm
 
 
 #####  Give VM users a little heads up to get ready
-dmidecode | grep -iq virtual) && echo -e " ${YELLOW}[i]${RESET} VM Detected. Please be sure to have the ${YELLOW}correct tools ISO mounted${RESET}." && sleep 5s
+(dmidecode | grep -iq virtual) && echo -e " ${YELLOW}[i]${RESET} VM Detected. Please be sure to have the ${YELLOW}correct tools ISO mounted${RESET}." && sleep 5s
 
 
 if [[ $(which gnome-shell) ]]; then
