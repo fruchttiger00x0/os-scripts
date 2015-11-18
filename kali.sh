@@ -199,6 +199,7 @@ grep -q 'deb .* sana/updates main contrib non-free' "${file}" 2>/dev/null || ech
 grep -q 'deb-src .* sana/updates main contrib non-free' "${file}" 2>/dev/null || echo "deb-src http://security.kali.org/kali-security sana/updates main contrib non-free" >> "${file}"
 #--- Rolling
 rolling_main=deb http://http.kali.org/kali kali-rolling main contrib non-free  # set rolling repo main
+if ! grep -q "$rolling_main" /etc/apt/sources.list /etc/apt/sources.list.d/*; then
     echo "deb http://security.kali.org/kali-security kali-rolling/updates main contrib non-free" >> "${file}"
 fi
 rolling_updates=deb http://http.kali.org/kali kali-rolling main contrib non-free # set rolling repo updates
