@@ -702,7 +702,7 @@ update-alternatives --set x-session-manager /usr/bin/xfce4-session   #update-alt
 export DISPLAY=:0.0
 #--- axiom / axiomd (May 18 2010) XFCE4 theme ~ http://xfce-look.org/content/show.php/axiom+xfwm?content=90145
 mkdir -p ~/.themes/
-timeout 300 curl --progress -k -L -f "http://xfce-look.org/CONTENT/content-files/90145-axiom.tar.gz" > /tmp/axiom.tar.gz \
+timeout 300 curl -O -J --progress -k -L -f 'https://www.ppload.com/api/files/download?id=1461767736' -H 'Referer: https://www.xfce-look.org/content/show.php/axiom+xfwm?content=90145' --compressed > /tmp/axiom.tar.gz \
   || echo -e ' '${RED}'[!]'${RESET}" Issue downloading axiom.tar.gz" 1>&2    #***!!! hardcoded path!
 tar -zxf /tmp/axiom.tar.gz -C ~/.themes/
 xfconf-query -n -c xsettings -p /Net/ThemeName -s "axiomd"
